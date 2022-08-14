@@ -4,6 +4,14 @@ export interface IPlugin {
   area(): number;
 }
 
+export class Area {
+  public calc(object: IPlugin): number {
+    return object.area();
+  }
+}
+
+////
+
 export class RetanguloImpl implements IPlugin {
   constructor(public altura: number, public largura: number) {}
   area(): number {
@@ -18,8 +26,6 @@ export class CirculoImpl implements IPlugin {
   }
 }
 
-export class Area {
-  public calc(object: IPlugin): number {
-    return object.area();
-  }
-}
+const area: Area = new Area();
+const retangulo: RetanguloImpl = new RetanguloImpl(10, 10);
+const calc: number = area.calc(retangulo);

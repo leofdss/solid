@@ -17,3 +17,7 @@ export class Area {
     return Math.PI * (circulo.raio * circulo.raio);
   }
 }
+
+const area: Area = new Area();
+const retangulo: Retangulo = new Retangulo(10, 10);
+const calc: number = area.retangulo(retangulo);
